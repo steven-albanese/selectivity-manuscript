@@ -84,7 +84,7 @@ High-throughput screening platforms~\citep{Davis:Nat.Biotechnol.:2011,Drewry2017
  The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchenical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors due to propagation of errors from multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in selectivity between targets, enabling more accurate predictions than expected. 
 
 \paragraph{Assessing the ability of alchemical free energy methods to predict selectivity}
-Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta$$\Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a statistical reanalysis of absolute free energy calculations on three different bromodomain inhibitors~\citep{Abel2017-gw}. \todo{Insert summary of results}. 
+Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta \Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a statistical reanalysis of absolute free energy calculations on three different bromodomain inhibitors~\citep{Abel2017-gw}. \todo{Insert summary of results}. 
    
 
 %
@@ -127,16 +127,15 @@ $\Delta\Delta$G for each edge in perturbation map with 12a, 12c and 12b (neutral
 \begin{figure}
 \begin{fullwidth}
 \begin{centering}
-\includegraphics[width=1.0\linewidth]{figures/figure1.pdf}
+\includegraphics[width=1.0\linewidth]{figures/figure1.png}
 % Need at least one blank line for centering to work.
 \end{centering}
 \caption{
 \label{fig:figure-1}
-{\bf Absolute free energy calculations show a wide range of errors in predicting selectivity} \\
-({\bf A})  A representative structure of BRD2 (4ALG) bound to ligand RVX-OH, highlighting the binding mode of the ligands considered in this paper. 
-({\bf B}) The chemical structure of all three brodomain inhibitors used in this reference. 
-({\bf C}) he bromodomain family tree, adapted from Aldeghi et al., 2016. Bromodomains shown in green (from original) had absolute free energy calculations performed on them. The orange box highlights the bromodomains for which RVX-208, RXV-OH and Bromosporine calculations were performed. The blue box contains bromodomains for which only Bromosporine calculations were performed. 
-({\bf D})The calculated $\Delta\Delta$G for each possible pairing of bromodomains. Orange ellipses represent a pair in which one or both of the bromodomains are from Family II (orange box, 1C). The blue ellipses contain only bromodomains from outside family II (blue box, 1C). The radii of the ellipses show the statistical uncertainty (in the Y-axis) or the experimental uncertainty (in the X-axis). The solid black line corresponds to absolute agreement between predicted $\Delta\Delta$G (Y-axis) and experiment $\Delta\Delta$G (X-axis). The Mean Unsigned Error (MUE) and Root Mean Square Error (RMSE) were calculated and shown with bootstrapped 95$\%$ confidence intervals, as described in the methods section.
+{\bf Free energy calculations speed up selectivity optimization} \\
+({\bf A})  The effect of correlation on expected errors for predicting selectivity ($\sigma_{selectivity}$) in kcal/mol. Each curve represents a different combination of target errors ($\sigma_1$ and $\sigma_2$). 
+({\bf B}) The change in selectivity for molecules proposed by medicinal chemists optimizing a lead candidate can be modeled by a normal distribution centered on 0 with a standard deviation of 1 kcal/mol (black curve). Each green curve corresponds to the distribution of compounds made after screening for a 1 log unit (1.4 kcal/mol) improvement in selectivity with a free energy methodology with a 1 kcal/mol per target error and a particular correlation. The shade region of each curve corresponds to the compounds with a real 1 log unit  improvement in selectivity. The speed up is calculated as the ratio of the percentage of compounds made with a real 1 log unit improvement to the percentage of compounds that would be expected in the original distribution.  
+({\bf C}) The speedup (y-axis, log scale) expected for 100x (2 log units, 2.8 kcal/mol) selectivity optimization as a function of correlation coefficient $\rho$. Each curve corresponds to a different $\sigma_{target}$ value.  
 }
 \end{fullwidth}
 \end{figure}
@@ -174,7 +173,7 @@ $\Delta\Delta$G for each edge in perturbation map with 12a, 12c and 12b (neutral
 \end{fullwidth}
 \end{figure}
 
-\todo{figure out why figure4 is rendering this way}
+
 \begin{figure}
 \begin{fullwidth}
 \begin{centering}
