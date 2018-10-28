@@ -1,0 +1,305 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ELIFE ARTICLE TEMPLATE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% PREAMBLE 
+\PassOptionsToPackage{table}{xcolor}
+%\documentclass[9pt,lineno]{elife}
+\documentclass[9pt,lineno]{elife-modified} % use modified template
+% Use the onehalfspacing option for 1.5 line spacing
+% Use the doublespacing option for 2.0 line spacing
+% Please note that these options may affect formatting.
+
+\usepackage{lipsum} % Required to insert dummy text
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\DeclareSIUnit\Molar{M}
+\usepackage{tabularx}
+\usepackage[numbers,sort&compress,square]{natbib}
+
+% Use sans serif for math throughout
+%\usepackage{sansmathfonts} % There seems to be something wrong with incorrect symbols showing up 
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\definecolor{forestgreen}{RGB}{10, 67, 28}
+\usepackage{soul}
+
+\usepackage{rotating} %rotate wide tables sideways :: sidewaystable --> \begin{sidewaystable}... == \begin{table}...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ARTICLE SETUP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Is structure based drug design ready for selectivity optimization?}  %%% 9/15 words
+
+
+\author[1,2]{Steven K. Albanese}
+\author[2]{John D. Chodera}
+\author[3]{Robert Abel}
+
+\author[3*]{Lingle Wang}
+
+
+\affil[1]{Louis V. Gerstner, Jr. Graduate School of Biomedical Sciences, Memorial Sloan Kettering Cancer Center, New York, NY 10065}
+\affil[2]{Computational and Systems Biology Program, Sloan Kettering Institute, Memorial Sloan Kettering Cancer Center, New York, NY 10065}
+\affil[3]{Schr\"{o}dinger, New York, NY 10036}
+
+
+\corr{lingle.wang@schrodinger.com}{LW}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ARTICLE START
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+%
+%
+%  ABSTRACT
+%
+%
+\begin{abstract}
+%%% /150 words
+
+
+\end{abstract}
+
+
+%
+%
+%  INTRODUCITON
+%
+%
+
+Since the FDA approval of imatinib in 2001, targeted small molecule kinase inhibitors (SMKIs) have become a major class of therapeutics in treating cancer and other diseases. Currently, there are 38\citep{fda-approved-kinase-inhibitors} approved SMKIs, and it is estimated that kinase targeted therapies account for as much as 50\% of current drug development~\citep{Santos:Nat.Rev.DrugDiscov.:2016}, with many more compounds currently in clinical trials. While there have been a number of successes, design of selective kinase inhibitors remains a challenge. Selectivity is particularly difficult for kinases: there are close to 518 protein kinases~\citep{Volkamer2015-jx,Manning2002-cw} with a highly conserved ATP binding site that is targeted by the majority of small molecule kinase inhibitors~\citep{Wu2015-oq}. While these inhibitors do adopt several different binding modes~\citep{Cowan-Jacob2007-rn,Seeliger2007-jn,Huse2002-ml,Harrison2003-ct}, previous work has shown that both Type I (binding to the active, DFG-in conformation) and Type II (binding to the inactive, DFG-out conformation) inhibitors display a wide range of selectivities~\citep{Anastassiadis2011-sm,Davis:Nat.Biotechnol.:2011}, often binding a number of other targets unselectively in addition to a primary target. Even inhibitors approved by the FDA, often the result of extensive drug development programs, can bind to a large number of off-target kinases~\citep{Klaeger2017-jr}. 
+
+\paragraph{Selectivity is an important consideration in drug design}
+Selectivity is an important property to consider in drug development, either in the pursuit of a maximally selective inhibitor~\citep{Zhang2009-il,Huggins2012-hr} or in pursuit a polypharmacological agent~\citep{Fan2007-hm,Apsel2008-it,Knight:Nat.Rev.Cancer:2010,Hopkins2006-qu,Hopkins2008-ij}, to avoid on-target toxicity (arising from inhibition of the intended target)~\citep{Rudmann2013-hi}  and off-target toxicity (arising from inhibition of unintended targets)~\citep{Kijima2011-xs,Liu2014-yi}. In either paradigm, considering the selectivity of a compound is complicated by the biology of kinases, which exist as nodes in complex signaling networks~\citep{Mendoza2011-bj,Tricker2015-xx} with feedback inhibition and cross-talk between pathways. Careful consideration of which kinase off-targets are being inhibited can avoid off-target toxicity due to alleviating feedback inhibition and inadvertently reactivating the targeted pathway~\citep{Mendoza2011-bj,Tricker2015-xx}, or the upregulation of a secondary pathway by alleviation of cross-talk inhibition~\citep{Bailey2014-pd,Chandarlapaty:CancerCell:2011}. Off-target toxicity can also be caused by inhibition outside of the kinome, such as gefitinib inhibiting CYP2D6~\citep{Kijima2011-xs} and causing hepatotoxicity in lung cancer patients. In a cancer setting, on-target toxicity can be avoided by considering the selectivity of the SMKI for the oncogenic mutant form of the kinase over the wild type form of the kinase~\citep{Pao2004-kx,Kim2012-mo,Juchum:DrugResist.Updat.:2015}, demonstrated by number of first generation EGFR inhibitors. Selectivity considerations can also lead to beneficial effects: Imatinib, intially developed to target BCR-Abl fusion proteins, is also approved for treating gastrointestinal stromal tumors (GIST)~\citep{Din2008-ag} due to its activity against receptor tyrosine kinase KIT. 
+
+\paragraph{Physical modeling can compliment high throughput screens and machine learning to predict selectivity}
+High-throughput screening platforms~\citep{Davis:Nat.Biotechnol.:2011,Drewry2017-bd,Cheng2010-ip,Uitdehaag2012-nm,Klaeger2017-jr} are able to produce a wealth of experimental data, covering many SMKI and a large percentage of the human kinome. This affinity data can enable various machine learning approaches geared towards predicting selectivity~\citep{Merget2017-sv,Volkamer2016-sj}. However, such screening platforms can be expensive to run for a development program considering a large number of molecules, and requires the synthesis of compounds to be tested. Machine learning algorithms can be hampered by the unreliability of publicly available affinity data~\citep{Kramer:J.Med.Chem.:2012} or by poor coverage of a novel chemotype in the model's training set. 
+
+\paragraph{Alchemical free energy methods can accurately predict single target potencies}
+ The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchenical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors due to propagation of errors from multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in selectivity between targets, enabling more accurate predictions than expected. 
+
+\paragraph{Assessing the ability of alchemical free energy methods to predict selectivity}
+Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta$$\Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a statistical reanalysis of absolute free energy calculations on three different bromodomain inhibitors~\citep{Abel2017-gw}. \todo{Insert summary of results}. 
+   
+
+%
+%
+%  RESULTS
+%
+%
+\section{Methods}
+
+\paragraph{Structure Preparation}
+Structures from the Shao~\citep{Shao2013-oe} and Hole~\citep{Hole2013-sr}, and Blake~\citep{Blake2016-su} papers were downloaded from the PDB~\citep{Berman2002-hg},selecting structures with the same co-ligand crystallized. For the Shao dataset, 4BCK (CDK2) and 4BCI (CDK9) were selected, with ligand 12c cocrystallized. For the Blake dataset, 5K4J (CDK2) and 5K4I (ERK2) were selected, crosytallized with ligand 21. The structures were prepared using Schrodinger’s Protein Preparation Wizard~\citep{Sastry2013-ax} (release 2017-3). In this pipeline, internal loops and missing atoms were modeled in, hydrogens were added in at the reported experimental pH (7.0 for the Shao dataset, 7.3 for the Blake dataset) for both the protein and the ligand. All crystal waters were retained. The ligand was assigned protonation and tautomer states using Epik at the experimental pH$\pm2$, and hydrogen bonding was optimized using PROPKA at the experimental pH$\pm2$. Finally, the entire structure was minimized using OPLS3 with an RMSD cutoff of 0.3\AA.
+
+\paragraph{Ligand Pose Generation}
+Ligands were extracted from the publication entries in the BindingDB as  2D SMILES strings. 3D conformations were generated using LigPrep with OPLS3~\citep{Harder2016-zn}. Ionization state was assigned using Epik at experimental pH$\pm2$. Stereoisomers were computed by retaining any specified chiralities and varying the rest. The tautomer and ionization state with the lowest epik state penalty was selected for use in the calculation. Ligand poses were generated by first aligning to the co-crystal ligand using the Largest Common Bemis-Murcko scaffold with fuzzy matching (Schrodinger 2017-4). Ligands that were poorly aligned or failed to align were then aligned using Maximum Common Substructure (MCSS). Finally, large R-groups were allowed to sample different conformations using MM-GBSA with a common core restrained. VSGB solvation model was used with the OPLS3 forcefield. No flexible residues were defined for the ligand. 
+
+\paragraph{Free Energy Calculations}
+The FEP+ panel (Maestro release 2018-1) was used to generate perturbation maps. Neutral perturbations were run for 15ns per replica, using an NPT ensemble and water buffer size of 5\AA. A GCMC solvation protocol was used to sample buried water molecules in the binding pocket, which discards any retained crystal waters. In order to quantify the correlation in errors between two targets, CDK2/ERK2 calculations from the Blake 2016 dataset were replicated 10 times. 
+
+\paragraph{Charge Change Free Energy Calculations} 
+For ligands where a protonation state change was expected to be relevant to binding based on a small state penalty, Jaguar pKa prediction calculations~\citep{Bochevarov2013-bn} were run to identify protonation state changes with pKas within 1 log unit of the experimental pH. The predicted pKas for one ligand (Shao 12b, 7.84) was within this range. To account for this, a pKa correction was performed. For this ligand, a separate perturbation map containing ligands 12a, 12c, 12b (neutral) and 12b (charged) was run for 30ns per replica using a post-calculation Coulombic charge correction. \textbf{Add in SALT concentration used for these}. The pKa correction was performed using Equation 1: 
+
+\begin{equation}\label{eq1}
+\Delta\Delta G_{corrected} = \Delta\Delta G_{uncorrected} - RT\log\Bigg(\frac{10^{pK_a -pH}+1}{e^{\frac{\Delta G_{neutral} - \Delta G_{charged}}{RT}} * \big(10^{pK_a - pH}+1\big)}\Bigg)
+\end{equation}
+
+$\Delta\Delta$G for each edge in perturbation map with 12a, 12c and 12b (neutral) was updated using the correction above and merged into the final map. 
+
+ 
+ \paragraph{Statistical Analysis of FEP+ calculations}
+
+ 
+ \paragraph{Quantification of rho}
+%
+%
+%  Results 
+%
+%
+
+\section{Results}
+\begin{figure}
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/figure1.pdf}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:figure-1}
+{\bf Absolute free energy calculations show a wide range of errors in predicting selectivity} \\
+({\bf A})  A representative structure of BRD2 (4ALG) bound to ligand RVX-OH, highlighting the binding mode of the ligands considered in this paper. 
+({\bf B}) The chemical structure of all three brodomain inhibitors used in this reference. 
+({\bf C}) he bromodomain family tree, adapted from Aldeghi et al., 2016. Bromodomains shown in green (from original) had absolute free energy calculations performed on them. The orange box highlights the bromodomains for which RVX-208, RXV-OH and Bromosporine calculations were performed. The blue box contains bromodomains for which only Bromosporine calculations were performed. 
+({\bf D})The calculated $\Delta\Delta$G for each possible pairing of bromodomains. Orange ellipses represent a pair in which one or both of the bromodomains are from Family II (orange box, 1C). The blue ellipses contain only bromodomains from outside family II (blue box, 1C). The radii of the ellipses show the statistical uncertainty (in the Y-axis) or the experimental uncertainty (in the X-axis). The solid black line corresponds to absolute agreement between predicted $\Delta\Delta$G (Y-axis) and experiment $\Delta\Delta$G (X-axis). The Mean Unsigned Error (MUE) and Root Mean Square Error (RMSE) were calculated and shown with bootstrapped 95$\%$ confidence intervals, as described in the methods section.
+}
+\end{fullwidth}
+\end{figure}
+
+
+\begin{figure}
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/figure2.png}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:figure-2}
+{\bf A CDK2/CDK9 selectivity dataset from Shao et \emph{al}., 2013} \\
+({\bf A})  \emph{(left)} Crystal Structure (4BCK)\citep{Hole2013-sr} of CDK2 (gray ribbon)  bound to ligand 12c (yellow spheres). Cyclin A is shown in blue ribbon \emph{(right)} 2D ligand interaction map of ligand 12c in the CDK2 binding site. 
+({\bf B}) \emph{(left)} Crystal structure of CDK9 (4BCI)\citep{Hole2013-sr} (gray ribbon) bound to ligand 12c (yellow spheres). Cyclin T is shown in blue ribbon. \emph{(right)} 2D ligand interaction map of ligand 12c in the CDK9 binding site.
+({\bf C}) \emph{(left)} 2D structure of the common scaffold for all ligands in congeneric ligand series 12 from the publication \emph{(right)} A table summarizing all R group substitutions as well as the published experimental binding affinities and selectivities\citep{Shao2013-oe}. 
+}
+\end{fullwidth}
+\end{figure}
+
+\begin{figure}
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/figure3.png}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:figure-3}
+{\bf CDK2 and ERK2 selectivity dataset from Blake et \emph{al}., 2016} \\
+({\bf A})  \emph{(top)} Crystal structure of CDK2 (5K4J) shown in gray cartoon and ligand 22 shown in yellow spheres. \emph{(bot)} 2D interaction map of ligand 22 in the binding pocket of CDK2
+({\bf B}) \emph{(top)} Crystal structure of ERK2 (5K4I) shown in gray cartoon with ligand 22 shown in yellow spheres. \emph{(bot)} 2D interaction map of ligand 22 in the binding pocket of ERK2.
+({\bf C}) \emph{(top)} Common scaffold for all of the ligands in the Blake dataset, with R denoting attachment side for substitutions. \emph{(bot)} Table showing R group substitutions and experimentally measured binding affinities and selectivities. Ligand numbers correspond to those used in publication. 
+}
+\end{fullwidth}
+\end{figure}
+
+\todo{figure out why figure4 is rendering this way}
+\begin{figure}
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/figure4.png}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:figure-4}
+{\bf Relative free energy calculations can accurately predict potency, but show larger errors for selectivity predictions.} \\
+({\bf A}) Single target potencies for CDK2, ERK2 and CDK9 from both the Shao and Blake datasets, with experimental values on the X-axis and calculated values on the Y-axis. Each black point corresponds to a ligand for a given target. All values are shown in units of kcal/mol. The horizontal error bars show the assumed experimental uncertainty of 0.3 kcal/mol\citep{BROWN2009420}. To better highlight outliers that are unlikely due simply to forcefield errors, we presume the forcefield error ($\sigma_\mathrm{FF} \approx$ 0.9 kcal mol$^{-1}$~\cite{Harder:J.Chem.TheoryComput.:2016}) also behaves as a random error. We show the total estimated statistical and forcefield error ($\sqrt{\sigma_\mathrm{FF}^2 + \sigma_\mathrm{calc}^2}$) as vertical error bars. The black line indicates agreement between calculation and experiment, while the gray shaded region represent 1.36 kcal/mol (or 1 log unit) error. The MUE and RMSE are shown on each plot with bootstrapped 95$\%$ confidence intervals.
+({\bf B}) The indicated $\Delta\Delta$G is shown for each ligand. 
+}
+\end{fullwidth}
+\end{figure}
+
+%
+%
+%  Discussion and Conclusions 
+%
+%
+\section{Discussion and Conclusions}
+	
+%
+\newpage
+%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ACKNOWLEDGMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Acknowledgments}
+JDC and SKA acknowledge support from NIH grant R01 121505.
+JDC acknowledges partial support from NIH grant P30 CA008748.
+
+\textbf{To be filled out soon}
+
+
+\section{Disclosures}
+
+JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger Inc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% AUTHOR CONTRIBUTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Author Contributions}
+\textbf{to be filled out soon} \\
+ designed the research; 
+ identified experimental datasets; 
+ performed the simulations; 
+ analyzed the data; 
+ wrote the paper.
+
+%
+\newpage
+%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% BIBLIOGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\nocite{*} % This command displays all refs in the bib file
+%\bibliography{zotero}
+%
+%  FIXME
+%
+\bibliography{albanese} %zotero + new citations HK added manually.
+
+
+
+%
+%
+\newpage
+%
+%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%
+%%%%%
+%%%
+%%
+%
+%
+%
+%
+%    Supplementary Information
+%
+%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%
+%%%%%%%%
+%%%%%
+%%%
+%%
+%
+%
