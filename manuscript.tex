@@ -196,8 +196,9 @@ Single target potencies and selectivities for CDK2/ERK2 from the Blake datasets 
 \end{centering}
 \caption{
 \label{fig:figure-5}
-{\bf Relative free energy calculations can accurately predict potency, but show larger errors for selectivity predictions.} \\
-}
+{\bf Correlation in selectivity prediction errors can be used to accelerate selectivity optimization} \\
+{\bf A} (\emph{left}) The joint posterior distribution of the prediction errors for CDK2 (X-axis) and ERK2 (Y-axis) from the Bayesian graphical model. (\emph{right}) Speedup in selectivity optimization (Y-axis) as a function of correlation coefficient (X-axis). The posterior marginal distribution of the correlation coefficient ($\rho$) is shown in gray, while the expected speed up is shown for 100x (green curve) and 10x (yellow curve) selectivity optimization. The inserted box shows the mean and 95\% confidence interval for the correlation coefficient. 
+{\bf B} (\emph{left}) The same as above, with CDK2 (X-axis) and CDK9 (Y-axis). (\emph{right}) As above, for the CDK2/CDK9 calculations.}
 \end{fullwidth}
 \end{figure}
 
@@ -288,7 +289,25 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger Inc.
 %    Supplementary Information
 %
 %
+\newpage
+\section{Supplemental Information}
+\setcounter{figure}{0} 
+\renewcommand{\figurename}{Supplemental Figure.}
 
+\begin{figure}
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/supp_figure1.png}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:sup-figure-1}
+{\bf CDK2 adopts an inactive conformation in the crystal structure used for the CDK2/ERK2 calculations} \\
+{\bf A} CDK2 (5K4J) adopts an inactive conformation in the absence of its cyclin. The DFG motif is in a DFG-out conformation, with the $\alpha$C helix rotated outwards, breaking the salt bridge between K33 and E51 (Uniprot numbering) that is typically a marker of an active conformation. 
+{\bf B} The CDK2 strucutre used for the CDK2/CDK9 calculations (4BCK) contains cyclin A, and surprisingly, adopts a DFG-out conformation forms the salt bridge between K33 and E51. 
+}
+\end{fullwidth}
+\end{figure}
 
 
 
