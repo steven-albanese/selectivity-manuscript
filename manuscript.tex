@@ -78,13 +78,14 @@ With the FDA approval of imatinib in 2001, targeted small molecule kinase inhibi
 Selectivity is an important property to consider in drug development, either in the pursuit of a maximally selective inhibitor~\citep{Zhang2009-il,Huggins2012-hr} or in pursuit a polypharmacological agent~\citep{Fan2007-hm,Apsel2008-it,Knight:Nat.Rev.Cancer:2010,Hopkins2006-qu,Hopkins2008-ij}, to avoid on-target toxicity (arising from inhibition of the intended target)~\citep{Rudmann2013-hi}  and off-target toxicity (arising from inhibition of unintended targets)~\citep{Kijima2011-xs,Liu2014-yi}. In either paradigm, considering the selectivity of a compound is complicated by the biology of kinases, which exist as nodes in complex signaling networks~\citep{Mendoza2011-bj,Tricker2015-xx} with feedback inhibition and cross-talk between pathways. Careful consideration of which kinase off-targets are being inhibited can avoid off-target toxicity due to alleviating feedback inhibition and inadvertently reactivating the targeted pathway~\citep{Mendoza2011-bj,Tricker2015-xx}, or the upregulation of a secondary pathway by alleviation of cross-talk inhibition~\citep{Bailey2014-pd,Chandarlapaty:CancerCell:2011}. Off-target toxicity can also be caused by inhibition outside of the kinome, such as gefitinib inhibiting CYP2D6~\citep{Kijima2011-xs} and causing hepatotoxicity in lung cancer patients. In a cancer setting, on-target toxicity can be avoided by considering the selectivity of the SMKI for the oncogenic mutant form of the kinase over the wild type form of the kinase~\citep{Pao2004-kx,Kim2012-mo,Juchum:DrugResist.Updat.:2015}, demonstrated by number of first generation EGFR inhibitors. Selectivity considerations can also lead to beneficial effects: Imatinib, intially developed to target BCR-Abl fusion proteins, is also approved for treating gastrointestinal stromal tumors (GIST)~\citep{Din2008-ag} due to its activity against receptor tyrosine kinase KIT. 
 
 \paragraph{Physical modeling can compliment high throughput screens and machine learning to predict selectivity}
-High-throughput screening platforms~\citep{Davis:Nat.Biotechnol.:2011,Drewry2017-bd,Cheng2010-ip,Uitdehaag2012-nm,Klaeger2017-jr} are able to produce a wealth of experimental data, covering many SMKIs and a large percentage of the human kinome. This affinity data can enable various machine learning approaches geared towards predicting selectivity~\citep{Merget2017-sv,Volkamer2016-sj}. However, such screening platforms can be expensive to run for a development program considering a large number of molecules, and requires the synthesis of compounds to be tested. Machine learning algorithms can be hampered by the unreliability of publicly available affinity data~\citep{Kramer:J.Med.Chem.:2012} or by poor coverage of a novel chemotype in the model's training set. 
+High-throughput screening platforms~\citep{Davis:Nat.Biotechnol.:2011,Drewry2017-bd,Cheng2010-ip,Uitdehaag2012-nm,Klaeger2017-jr,Vasta:2018gy} are able to produce a wealth of experimental data, covering many SMKIs and a large percentage of the human kinome. This affinity data can enable various machine learning approaches geared towards predicting selectivity~\citep{Merget2017-sv,Volkamer2016-sj,ChristmannFranck:2016gka,Gao:2013jx}. However, such screening platforms can be expensive to run for a development program considering a large number of molecules, and requires the synthesis of compounds to be tested. Machine learning algorithms can be hampered by the unreliability of publicly available affinity data~\citep{Kramer:J.Med.Chem.:2012,BROWN2009420} or by poor coverage of a novel chemotype in the model's training set~\citep{Drewry2017-bd}. While there have been efforts to improve the experimental tractability for kinases~\citep{Albanese:2018hq,Seeliger:2005ic,sgc-kinome,Chambers:2004jc} and generate high-quality data in a less high-throughput manner~\citep{Seeliger2007-jn,Levinson:PLoSBiol.:2006}, these methodologies are limited by a number of experimental concerns, such as ligand synthesis, ligand solubility and difficulty in expressing the proteins of interest without extensive tailoring of expression protocols. 
 
-\paragraph{Alchemical free energy methods can accurately predict single target potencies}
- The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchenical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors from the propagation of errors for multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in predicting the selectivity between targets, enabling more accurate than expected calculations. 
+\paragraph{Alchemical free energy methods can accurately predict single target potencies and the impact of mutations}
+ The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016,Cournia:2017ip} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017,abel2017accelerating} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. Protein mutation free energy calculations have also showed promise in predicitng the $\Delta \Delta G$ of mutation for a benchmark set of Abl mutations and FDA-approved kinase inhibitors with an accuracy of about 1 kcal/mol~\citep{Hauser:2018vz}.  While the ability to predict ligand potencies and, to a lesser extent, the impact of mutations has been studied previously, not much work has been done on assessing free energy methodology for predicting selectivity. 
 
 \paragraph{Assessing the ability of alchemical free energy methods to predict selectivity}
-Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta \Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a simple numerical model to quantify the expected speed up in selectivity optimization expected for different combinations of per target errors and correlation coefficient values. We built bayesian graphical models of the relative free energy calculations to quantify the correlation of errors in our example calculations.   \todo{Insert summary of results}. 
+While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, as seen in the Hauser paper, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchenical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors from the propagation of errors for multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in predicting the selectivity between targets, enabling more accurate than expected calculations. 
+Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta \Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:2017jt} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a simple numerical model to quantify the expected speed up in selectivity optimization expected for different combinations of per target errors and correlation coefficient values. We built bayesian graphical models of the relative free energy calculations to quantify the correlation of errors in our example calculations.   \todo{Insert summary of results}. 
    
 
 %
@@ -93,6 +94,19 @@ Here, we investigate the utility of alchemical free energy calculations for the 
 %
 %
 \section{Methods}
+
+\paragraph{Numerical model of selectivity}
+To model the impact correlation would have on the expected uncertainty for selectivity predictions, $\sigma_{selectivity}$ was calculated using Equation~\ref{eq11} for 1000 evenly spaced values of the correlation coefficient ($\rho$) from 0 to 1, for a number of combinations of per target errors ($\sigma_{target1}$ and $\sigma_{target2}$) 
+
+\begin{equation}\label{eq11}
+\sigma_{selectivity} = \sqrt{\sigma_{target1}^2 + \sigma_{target2}^2 - 2\rho\sigma_{target1}\sigma_{target2}}
+\end{equation}
+
+The speed up in selectivity optimization that could be expected from using free energy calculations of a particular per target error ($\sigma_{selectivity}$) was quantify as follows using NumPy (v 1.14.2). An original, true distribution for the changed in selectivity of 200000000 new compounds proposed with respected to a reference compound was modeled as a normal distribution centered around 0 with a standard deviation of 1 kcal/mol. This assumption was made on the basis that the majority of selectivity is driven by the scaffold, and R group modifications will do little to drive changes in selectivity. The 1 kcal/mol distribution is supported by the standard deviations of the selectivity in the experimental datasets referenced in this work, which are all less than, but close, to 1 kcal/mol. 
+
+Each of these proposed compounds were "screened" by a free energy calculation technique with a per target error ($\sigma_{target}$) of 1 kcal/mol~\citep{Wang:J.Am.Chem.Soc.:2015} and a specified correlation coefficient $\rho$. A $\sigma_{selectivity}$ was calculated according to Equation~\ref{eq11}. The noise of the computational method was modeled as a normal distribution centered around 0 with a standard deviation of $\sigma_{selectivity}$ and added to the "true" change in selectivity. Any compound predicted to have an improvement in selectivity of 1.4 kcal/mol (1 log unit) would then be made and have its selectivity experimental measured. The speedup value for each value of $\rho$ is calculated as the proportion of compounds made with a true selectivity gain of 1.4 kcal/mol divided by the proportion of compounds with a 1.4 kcal/mol improvement in the original distribution, where all of the compounds were made. 
+
+Finally, this process was repeated for a 100x (2.8 kcal/mol, 2 log unit) selectivity optimization and 50 linearly spaced values of the correlation coefficient ($\rho$) between 0 and 1, for four values of $\sigma_{selectivity}$ and 40000000 compounds in the original distribution. 
 
 \paragraph{Structure Preparation}
 Structures from the Shao~\citep{Shao2013-oe} and Hole~\citep{Hole2013-sr}, and Blake~\citep{Blake2016-su} papers were downloaded from the PDB~\citep{Berman2002-hg},selecting structures with the same co-ligand crystallized. For the Shao dataset, 4BCK (CDK2) and 4BCI (CDK9) were selected, which have ligand 12c cocrystallized. For the Blake dataset, 5K4J (CDK2) and 5K4I (ERK2) were selected, cocrystallized with ligand 21. The structures were prepared using Schrodinger’s Protein Preparation Wizard~\citep{Sastry2013-ax} (release 2017-3). This pipeline modeled in internal loops and missing atoms, added hydrogens at the reported experimental pH (7.0 for the Shao dataset, 7.3 for the Blake dataset) for both the protein and the ligand. All crystal waters were retained. The ligand was assigned protonation and tautomer states using Epik at the experimental pH$\pm2$, and hydrogen bonding was optimized using PROPKA at the experimental pH$\pm2$. Finally, the entire structure was minimized using OPLS3 with an RMSD cutoff of 0.3\AA.
@@ -104,7 +118,7 @@ Ligands were extracted from the publication entries in the BindingDB as  2D SMIL
 The FEP+ panel (Maestro release 2017-4) was used to generate perturbation maps. Neutral perturbations were run for 15ns per replica, using an NPT ensemble and water buffer size of 5\AA. A GCMC solvation protocol was used to sample buried water molecules in the binding pocket prior to the calculation, which discards any retained crystal waters. 
 
 \paragraph{Charge Change Free Energy Calculations} 
-For ligands where a protonation state change was expected to be relevant to binding based on a small state penalty, Jaguar pKa prediction calculations~\citep{Bochevarov2013-bn} were run to identify protonation state changes with pKas within 1 log unit of the experimental pH. The predicted pKas for one ligand (Shao 12b, 7.84) was within this range. To account for this, a pKa correction was performed. For this ligand, a separate perturbation map containing ligands 12a, 12c, 12b (neutral) and 12b (charged) was run for 30ns per replica using a post-calculation Coulombic charge correction. \textbf{Add in SALT concentration used for these}. The pKa correction was performed using Equation 1: 
+For ligands where a protonation state change was expected to be relevant to binding based on a small state penalty, Jaguar pKa prediction calculations~\citep{Bochevarov2013-bn} were run to identify protonation state changes with pKas within 1 log unit of the experimental pH. The predicted pKas for one ligand (Shao 12b, 7.84) was within this range. To account for this, a pKa correction was performed. For this ligand, a separate perturbation map containing ligands 12a, 12c, 12b (neutral) and 12b (charged) was run for 30ns per replica using a post-calculation Coulombic charge correction. \textbf{Add in SALT concentration used for these}. The pKa correction was performed using Equation~\ref{eq1}: 
 
 \begin{equation}\label{eq1}
 \Delta\Delta G_{corrected} = \Delta\Delta G_{uncorrected} - RT\log\Bigg(\frac{10^{pK_a -pH}+1}{e^{\frac{\Delta G_{neutral} - \Delta G_{charged}}{RT}} * \big(10^{pK_a - pH}+1\big)}\Bigg)
@@ -114,7 +128,7 @@ $\Delta\Delta$G for each edge in perturbation map with 12a, 12c and 12b (neutral
 
  
  \paragraph{Statistical Analysis of FEP+ calculations}
-Each FEP+ calculation has a reported mean unsigned error (MUE) and root mean squared error (RMSE) with a bootstrapped 95\% confidence interval. The MUE was calculated according Equation 2, while the RMSE was calculated according to Equation 3. 
+Each FEP+ calculation has a reported mean unsigned error (MUE) and root mean squared error (RMSE) with a bootstrapped 95\% confidence interval. The MUE was calculated according Equation~\ref{eq2}, while the RMSE was calculated according to Equation~\ref{eq3}. 
 
 \begin{equation}\label{eq2}
 MUE = \frac{ \sum_{0}^{n} \mid \Delta G _{calc} - \Delta G _{exp} \mid}{n}
@@ -124,16 +138,16 @@ MUE = \frac{ \sum_{0}^{n} \mid \Delta G _{calc} - \Delta G _{exp} \mid}{n}
 RMSE = \frac{ \sum_{0}^{n} \sqrt{\Delta~G_{calc}^2 - \Delta~G_{exp}^2}}{n} 
  \end{equation}
  
- Each RMSE and MUE is reported with a 95\% confidence interval calculated from 10000 replicates of a choose-one-replace bootstrap protocol on the $\Delta$G values reported to account for the finite sample size of the ligands. The code used to bootstrap these values is available on github \todo{insert URL to github repo for the paper here}
+ Each RMSE and MUE is reported with a 95\% confidence interval calculated from 10000 replicates of a choose-one-replace bootstrap protocol on the $\Delta$G values reported to account for the finite sample size of the ligands. The code used to bootstrap these values is available on github: https://github.com/choderalab/selectivity
  
  \paragraph{Quantification of the correlation coefficient $\rho$}
- To quantify $\rho$, we built a Bayesian graphical model using pymc3\todo{cite this}, which has been made available online\todo{insert url pointing to the notebooks here}. For each phase (complex and solvent), the absolute free energy ($G$) of ligand $i$ was treated as a normal distribution (equation 4). For each set of calculations, one ligand was chosen as the reference, and pinned to 0, with a standard deviation of 1 kcal/mol in order to improve the efficiency of sampling from the model. 
+ To quantify $\rho$, we built a Bayesian graphical model using pymc3 (v. 3.5) ~\citep{Salvatier:2016ki} and theano (v 1.0.3)~\citep{2016arXiv160502688full}, which has been made available on Github. For each phase (complex and solvent), the absolute free energy ($G$) of ligand $i$ was treated as a normal distribution (Equation~\ref{eq4}). For each set of calculations, one ligand was chosen as the reference, and pinned to 0, with a standard deviation of 1 kcal/mol in order to improve the efficiency of sampling from the model.
  
  \begin{equation}\label{eq4}
 G^{phase}_{i,target} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
  \end{equation}
  
- For each edge of the FEP map (ligand $i$ --> ligand $j$), there is a contribution from dummy atoms, that was modeled as in equation 5.  
+ For each edge of the FEP map (ligand $i$ --> ligand $j$), there is a contribution from dummy atoms, that was modeled as in Equation~\ref{eq5}.  
   \begin{equation}\label{eq5}
 c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
  \end{equation}
@@ -141,12 +155,12 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
  The model was restrained by including data from the FEP+ calculation. 
  
  \begin{equation}\label{eq6}
- \Delta G^{BAR}_{phase, ~ij, ~target} = \mathcal{N}(G^{phase}_{j, target} - G^{phase}_{i, target},~\delta^2\Delta G^{BAR}_{phase, ~ij, ~target}, ~observed = \Delta G^{calc}_{phase,~ij,~target}
+ \Delta G^{BAR}_{phase, ~ij, ~target} = \mathcal{N}(G^{phase}_{j, target} - G^{phase}_{i, target},~\delta^2\Delta G^{BAR}_{phase, ~ij, ~target}, ~observed = \Delta G^{calc}_{phase,~ij,~target})
  \end{equation}
  
  Where $~\delta^2\Delta G^{BAR}_{phase, ~ij, ~target}$ is the reported BAR uncertainty from the calculation, and $\Delta G^{calc}_{phase,~ij,~target}$ is the BAR estimate of the free energy for the perturbation between ligands $i$ and $j$ in a given phase. 
  
- From this, we can calculate the $\Delta \Delta G^{FEP}$ for each edge as in equation 7:
+ From this, we can calculate the $\Delta \Delta G^{FEP}$ for each edge as in Equation~\ref{eq7}:
  
  \begin{equation}\label{eq7}
  \Delta\Delta G^{FEP}_{target,~ij} = \Delta G^{BAR}_{complex,~ij,~target} - \Delta G^{BAR}_{solvent,~ij,~target}
@@ -154,18 +168,36 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
  
  To model the way an offset is calculated for the $\Delta~G$ reported by the FEP+ panel in Maestro: 
  
- \begin{equation}\label{eq8}
-{offset} =  \frac{\sum^n G^{complex}_{i,target} - G^{solvent}_{i,target}}{n} - \frac{\sum^n \Delta G^{exp}_{i}}{n}
- \end{equation}
+\begin{equation}\label{eq8}
+\text{offset} =  \frac{\sum^n G^{complex}_{i,target} - G^{solvent}_{i,target}}{n} - \frac{\sum^n \Delta G^{exp}_{i}}{n}
+\end{equation}
+
+The offset was added to each $\Delta G^{BAR}_{i}$ to calculate $\Delta G^{sch}_{i}$. The error for a given ligand was calculated as in Equation~\ref{eq9}. 
+
+\begin{equation}\label{eq9}
+\epsilon_i = \Delta G^{sch}_i - \Delta G^{exp}_i
+\end{equation}
+
+From these $\epsilon$ values, we calculated the correlation coeffient, $\rho$ as in Equation~\ref{eq10}. 
+
+\begin{equation}\label{eq10}
+\rho = \frac{cov(\epsilon_{target1}, \epsilon_{target2})}{\sigma_{target 1}\sigma_{target 2}}
+\end{equation}
  
+ Where $\sigma$ is the standard deviation of $\epsilon$. 
  
-%
 %
 %  Results 
 %
 %
 
 \section{Results}
+
+\paragraph{Correlation of errors can make selectivity predictions more accurate and speed up ligand optimization}
+
+To demonstrate the potential impact correlation has on the uncertainty of selectivity predictions ($\sigma_{selectivity}$) using alchemical free energy techniques, we created a simple numerical model following equation~\ref{eq11}, which takes into account each of the per target errors expected from the methodology as well as the correlation in those errors. As seen in Figure ~\ref{fig:figure-1}A, if the per target erorrs ($\sigma_1$ and $\sigma_2$) are the same, $\sigma_{selectivity}$ approaches 0 as the correlation coefficient ($\rho$) approaches 1. If the error for the free energy method is not the same, $\sigma_{selectivity}$ gets smaller but approachs a non-zero value as $\rho$ approaches 1. 
+To quantify the expected speedup in selectivity optimization, we modeled the change in selectivity with respect to a reference compound for a number of compounds a medicinal chemist might suggest as a normal distribution centered around 0 with a standard deviation of 1 kcal/mol (Figure~\ref{fig:figure-1}B, black curve), reflecting that most proposed changes would not drive large changes in selectivity. Then, suppose that each compound is screened computationally with a method free energy methodology with a per target ($\sigma_{target}$) error of 1 kcal/mol, and all compounds predicted to have a 1.4 kcal/mol improvement in selectivity are synthesized and experimentally tested (Figure~\ref{fig:figure-1}B, colored curves). The fold-change in the proportion of compounds that are made that have a true 1.4 kcal/mol improvement in selectivty compared to the original distribution can be calculated as a surrogate for the expected speedup. For a 1.4 kcal/mol selectivity improvement threshold (1 log unit), a correlation of 0.5 gives an expected speed up of 4.1x, which can be interpreted as 4.1x fewer compounds needing to be made before achieving a 1 log unit improvement in selectivity. This process can be extended for the even more difficult proposition of achieving a 2 log unit improvement in selectivity (Figure~\ref{fig:figure-1}C), where 200-300x speedups can be expected, depending on $\sigma_{target}$ for the free energy methodology. 
+
 \begin{figure}
 \begin{fullwidth}
 \begin{centering}
@@ -182,6 +214,11 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
 \end{fullwidth}
 \end{figure}
 
+\paragraph{The CDK2 and CDK9 experimental dataset demonstrates the difficulty in achieving selectivity for closely related kinases}
+
+To begin quantifying the correlation of errors in free energy predictions for selectivity, we set out to gather datasets that met a number of criteria. We looked for datasets that contained binding affinity data for a number of kinase targets and ligands, as well as having crystal structures for each target with the same co-crystallized ligand. For the CDK2/CDK9 datatset~\citep{Shao2013-oe}, ligand 12c was cocrystallized with CDK2/cylin A (Figure~\ref{fig:figure-2}A, left) and CDK9/cyclin T (Figure~\ref{fig:figure-2}B, left), work that was published in a companion paper~\citep{Hole2013-sr}. In both CDK2 and CDK9, ligand 12c forms relatively few hydrogen bond interactions with the kinase. Each kinase forms a set of hydrogen bonds between the ligand scaffold and a hinge residue (C106 in CDK9 and L83 in CDK2) that is conserved across all of the ligands in this series. CDK9, which has slightly lower affinity for ligand 12c (Figure~\ref{fig:figure-2}C, right), forms a lone interaction between the sulfonamide of ligand 12c and residue E107. On the other hand, CDK2 forms interactions between the sulfonamide of ligand 12c and residues K89 and H84. The congeneric series of ligands contains a number of challenging perturbations, particularly at substituent point R3 (Figure~\ref{fig:figure-2}C, left). Ligand 12i also presented a challenging perturbation, moving the 1-(piperazine-1-yl)ethanone from the \emph{meta} to \emph{para} location. 
+
+This congeneric series of ligands also highlights two of the challenges of working from publicly available data. First, the dynamic range of selectivity is incredibly narrow, with a mean $\Delta \Delta G_{selectivity}$ (CDK9 - CDK2) of only -0.65 kcal/mol, and a standard deviation of 0.88 kcal/mol. Additionally, experimental uncertainties are not reported for the experimental measurements. Thus, for this and subsequent sets of ligands, the experimental uncertainty is assumed to be 0.3 kcal/mol based on previous work done to summarize uncertainty in experimental data~\citep{BROWN2009420,Hauser:2018vz}. 
 
 \begin{figure}
 \begin{fullwidth}
@@ -199,6 +236,11 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
 \end{fullwidth}
 \end{figure}
 
+\paragraph{The CDK2 and ERK2 dataset achieves higher levels of selectivity for more distantly related kinases}
+\todo{I probably need to either remove the reference to how closely related the kinases are, or come up with a way to quantify that - SKA}
+The CDK2/ERK2 datatset from Blake \emph{et al.,} 2016 also met the criteria described above. Crystal structures for both CDK2 (Figure~\ref{fig:figure-3}A, top) and ERK2 (Figure~\ref{fig:figure-3}B, top) were available with ligand 22 co-crystallized. Of note, CDK2 was not crystallized with cyclin A, despite cyclin A being include in the affinity assay reported in the paper~\citep{Blake2016-su}. CDK2 adopts a DFG-in conformation with the $\alpha$C helix rotated out, away from the ATP binding site and breaking the conserved salt bridge between K33 and E51 (Supp. Figure~\ref{fig:sup-figure-1}A), indicative of an inactive kinase~\citep{Huse2002-ml,Hari:2013dp,TREIBER2013745}. By comparison, the CDK2 structure from the CDK2/CDK9 dataset adopts a DFG-in conformation with the $\alpha$C helix rotated in, forming the ionic bond between K33 and E51 indicative of an active kinase, due to allosteric activation by cyclin A. While missing cyclins have caused problems for free energy calculations in prior work~\todo{is there a good citation for this?}, it is possible that the fully active conformation contributes equally to binding affinity for all of the ligands in the series, and the high accuracy of the potency predictions (Figure~\ref{fig:figure-4}, top left) is the result of fortutious cancellation of errors. The binding mode for this series is similar between both kinases. There is a set of conserved hydrogens bonds between the scaffold of the ligand and the backbone of one of the hinge residues (L83 for CDK2 and M108 for ERK2). The conserved lysine (K33 for CDK2 and K54 for ERK2), normally involved in the formation of a ionic bond with the $\alpha$C helix, forms a hydrogen bond with the scaffold (Figure~\ref{fig:figure-4}A and~\ref{fig:figure-4}B, bottom) in both CDK2 and ERK2. However, in the ERK2 structure, the hydroxyl engages a crystallographic water as well as N154 in a hydrogen bond network that is not present in the CDK2 structure. 
+The congenric ligand series features a single subsituent point, with the R groups exposed to the solvent. This helps explain the extremely narrow distribution of selectivities, with a mean selectivity of -1.74 kcal/mol (ERK2 - CDK2) and standard deviation of 0.56 kcal/mol. This suggests that the selectivity is largely driven by the scaffold and unaffected by the R group substitutions.
+
 \begin{figure}
 \begin{fullwidth}
 \begin{centering}
@@ -214,6 +256,8 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
 }
 \end{fullwidth}
 \end{figure}
+
+\paragraph{FEP+ calculations show accurate potency predictions for ERK2/CDK2 and larger errors for CDK2/CDK9}
 
 
 \begin{figure}
@@ -239,8 +283,8 @@ Single target potencies and selectivities for CDK2/ERK2 from the Blake datasets 
 \caption{
 \label{fig:figure-5}
 {\bf Correlation in selectivity prediction errors can be used to accelerate selectivity optimization} \\
-{\bf A} (\emph{left}) The joint posterior distribution of the prediction errors for CDK2 (X-axis) and ERK2 (Y-axis) from the Bayesian graphical model. (\emph{right}) Speedup in selectivity optimization (Y-axis) as a function of correlation coefficient (X-axis). The posterior marginal distribution of the correlation coefficient ($\rho$) is shown in gray, while the expected speed up is shown for 100x (green curve) and 10x (yellow curve) selectivity optimization. The inserted box shows the mean and 95\% confidence interval for the correlation coefficient. 
-{\bf B} (\emph{left}) The same as above, with CDK2 (X-axis) and CDK9 (Y-axis). (\emph{right}) As above, for the CDK2/CDK9 calculations.}
+({\bf A}) (\emph{left}) The joint posterior distribution of the prediction errors for CDK2 (X-axis) and ERK2 (Y-axis) from the Bayesian graphical model. (\emph{right}) Speedup in selectivity optimization (Y-axis) as a function of correlation coefficient (X-axis). The posterior marginal distribution of the correlation coefficient ($\rho$) is shown in gray, while the expected speed up is shown for 100x (green curve) and 10x (yellow curve) selectivity optimization. The inserted box shows the mean and 95\% confidence interval for the correlation coefficient. 
+({\bf B}) (\emph{left}) The same as above, with CDK2 (X-axis) and CDK9 (Y-axis). (\emph{right}) As above, for the CDK2/CDK9 calculations.}
 \end{fullwidth}
 \end{figure}
 
@@ -336,7 +380,7 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger Inc.
 \setcounter{figure}{0} 
 \renewcommand{\figurename}{Supplemental Figure.}
 
-\begin{figure}
+\begin{figure}[h]
 \begin{fullwidth}
 \begin{centering}
 \includegraphics[width=1.0\linewidth]{figures/supp_figure1.png}
@@ -345,8 +389,22 @@ JDC is a member of the Scientific Advisory Board for Schr\"{o}dinger Inc.
 \caption{
 \label{fig:sup-figure-1}
 {\bf CDK2 adopts an inactive conformation in the crystal structure used for the CDK2/ERK2 calculations} \\
-{\bf A} CDK2 (5K4J) adopts an inactive conformation in the absence of its cyclin. The DFG motif is in a DFG-out conformation, with the $\alpha$C helix rotated outwards, breaking the salt bridge between K33 and E51 (Uniprot numbering) that is typically a marker of an active conformation. 
-{\bf B} The CDK2 strucutre used for the CDK2/CDK9 calculations (4BCK) contains cyclin A, and surprisingly, adopts a DFG-out conformation forms the salt bridge between K33 and E51. 
+({\bf A}) CDK2 (5K4J) adopts an inactive conformation in the absence of its cyclin. The DFG motif is in a DFG-in conformation, with the $\alpha$C helix rotated outwards, breaking the salt bridge between K33 and E51 (Uniprot numbering) that is typically a marker of an active conformation. Notably, the Phe in the DFG motif does not completely form the hydrophobic spine due to the rotation of the $\alpha$C helix~\citep{Hu:2015kh}
+({\bf B}) The CDK2 structure used for the CDK2/CDK9 calculations (4BCK) contains cyclin A and adopts a DFG-in/$\alphs$C helix-in conformation that forms the salt bridge between K33 and E51. This is typically indicative of a fully active kinase~\citep{Huse2002-ml,Hari:2013dp,TREIBER2013745}. 
+}
+\end{fullwidth}
+\end{figure}
+
+\begin{figure}[h]
+\begin{fullwidth}
+\begin{centering}
+\includegraphics[width=1.0\linewidth]{figures/supp_2.png}
+% Need at least one blank line for centering to work.
+\end{centering}
+\caption{
+\label{fig:sup-figure-2}
+{\bf Correlation coefficient $\rho$ controls the shape of the joint marginal distribution of errors} \\
+As $\rho$ increases, the joint marginal distribution of errors become more diagonal. Each panel shows 10000 samples drawn from a multivariate normal distribution centered around 0 kcal/mol, where the per target error was set to 1 kcal/mol and $\rho$ to the value indicated in bold over the plot. 
 }
 \end{fullwidth}
 \end{figure}
