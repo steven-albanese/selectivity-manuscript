@@ -81,13 +81,12 @@ Selectivity is an important property to consider in drug development, either in 
 High-throughput screening platforms~\citep{Davis:Nat.Biotechnol.:2011,Drewry2017-bd,Cheng2010-ip,Uitdehaag2012-nm,Klaeger2017-jr,Vasta:2018gy} are able to produce a wealth of experimental data, covering many SMKIs and a large percentage of the human kinome. This affinity data can enable various machine learning approaches geared towards predicting selectivity~\citep{Merget2017-sv,Volkamer2016-sj,ChristmannFranck:2016gka,Gao:2013jx}. However, such screening platforms can be expensive to run for a development program considering a large number of molecules, and requires the synthesis of compounds to be tested. Machine learning algorithms can be hampered by the unreliability of publicly available affinity data~\citep{Kramer:J.Med.Chem.:2012,BROWN2009420} or by poor coverage of a novel chemotype in the model's training set~\citep{Drewry2017-bd}. While there have been efforts to improve the experimental tractability for kinases~\citep{Albanese:2018hq,Seeliger:2005ic,sgc-kinome,Chambers:2004jc} and generate high-quality data in a less high-throughput manner~\citep{Seeliger2007-jn,Levinson:PLoSBiol.:2006}, these methodologies are limited by a number of experimental concerns, such as ligand synthesis, ligand solubility and difficulty in expressing the proteins of interest without extensive tailoring of expression protocols. 
 
 \paragraph{Alchemical free energy methods can accurately predict single target potencies and the impact of mutations}
- The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016,Cournia:2017ip} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017,abel2017accelerating} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. Protein mutation free energy calculations have also showed promise in predicitng the $\Delta \Delta G$ of mutation for a benchmark set of Abl mutations and FDA-approved kinase inhibitors with an accuracy of about 1 kcal/mol~\citep{Hauser:2018vz}.  While the ability to predict ligand potencies and, to a lesser extent, the impact of mutations has been studied previously, not much work has been done on assessing free energy methodology for predicting selectivity. 
+ The selectivity of imatinib for Abl kinase over Src~\citep{Lin2013-ft,Lin2014-iv} and within a family of non-receptor tyrosine kinases~\citep{Lin2013-mu} has been studied extensively using molecular dynamics and free energy calculations. Advances in atomistic molecular mechanics forcefields~\citep{Huang:J.Comput.Chem.:2013,Maier:J.Chem.TheoryComput.:2015,Harder:J.Chem.TheoryComput.:2016,Cournia:2017ip} have reached a level of accuracy  sufficient for predicting ligand potencies. Alchemical free energy calculations allow for prediction of ligand binding free energies, including all enthalpic and entropic contributions~\citep{Chodera2011-jn}. In kinases, free energy calculations have previously been shown to achieve mean unsigned errors of less than 1.0 kcal/mol on a number of systems~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:Curr.Opin.Struct.Biol.:2017,abel2017accelerating} when predicting single target potencies. Beyond kinases, alchemical free energy calculations achieved a mean unsigned error of 0.6 kcal/mol in predicting BRD4 inhibitor potencies~\citep{Aldeghi2015-lf}. Protein mutation free energy calculations have also showed promise in predicitng the $\Delta \Delta G$ of mutation for a benchmark set of Abl mutations and FDA-approved kinase inhibitors with an accuracy of about 1 kcal/mol~\citep{Hauser:2018vz}.  While the ability to predict ligand potencies and, to a lesser extent, the impact of mutations has been studied previously, not much work has been done on assessing free energy methodology for predicting selectivity. Work on predicting the selectivity of three bromodomain inhibitors for a number of different bromodomains achieved promising accuracy for single target potencies of roughly 1 kcal/mol, but does not evaluate into the accuracy of $\Delta \Delta G_{selectivity}$ predictions in depth~\citep{Aldeghi2017-ox}. 
 
 \paragraph{Assessing the ability of alchemical free energy methods to predict selectivity}
-While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, as seen in the Hauser paper, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchenical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors from the propagation of errors for multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in predicting the selectivity between targets, enabling more accurate than expected calculations. 
-Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta \Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:2017jt} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a simple numerical model to quantify the expected speed up in selectivity optimization expected for different combinations of per target errors and correlation coefficient values. We built bayesian graphical models of the relative free energy calculations to quantify the correlation of errors in our example calculations.   \todo{Insert summary of results}. 
+While we expect that the errors in both experiment and calculation will be larger when considering two targets instead of one, as seen in the Hauser paper, we were interested to see to what degree these errors in predicted binding free energies on the two targets were correlated and to what extend the current alchemical free energy methods can predict selectivity. Due to the narrow dynamic range of selectivities and larger experimental errors from the propagation of errors for multiple targets, we anticipate difficulty in predicting selectivity if the errors in the calculated free energies on the two targets are largely uncorrelated, or even anticorrelated. However, some level of correlation in the errors of the calculated free energies on the two targets could lead to a fortuitous cancellation of errors in predicting the selectivity between targets, enabling more accurate than expected calculations. 
+Here, we investigate the utility of alchemical free energy calculations for the prediction of selectivity, hereafter taken to mean the $\Delta \Delta$G in binding free energies of the same compound for two targets. We employed state of the art relative free energy calculations~\citep{Wang:J.Am.Chem.Soc.:2015,Abel:2017jt} to predict the selectivities of two different congeneric ligand series~\citep{Shao2013-oe, Blake2016-su}, as well as present a simple numerical model to quantify the expected speed up in selectivity optimization expected for different combinations of per target errors and correlation coefficient values. We built Bayesian graphical models of the relative free energy calculations to quantify the correlation of errors in our example calculations.   \todo{Insert summary of results}. 
    
-
 %
 %
 %  RESULTS
@@ -172,19 +171,32 @@ c_{i,j} = \mathcal{N}(\mu=0,~sd=25.0~kcal/mol)
 \text{offset} =  \frac{\sum^n G^{complex}_{i,target} - G^{solvent}_{i,target}}{n} - \frac{\sum^n \Delta G^{exp}_{i}}{n}
 \end{equation}
 
-The offset was added to each $\Delta G^{BAR}_{i}$ to calculate $\Delta G^{sch}_{i}$. The error for a given ligand was calculated as in Equation~\ref{eq9}. 
+The offset was added to each $\Delta G^{BAR}_{i}$ to calculate $\Delta G^{sch}_{i}$. 
 
-\begin{equation}\label{eq9}
-\epsilon_i = \Delta G^{sch}_i - \Delta G^{exp}_i
+The experimental binding affinity was treated as a true value ($\Delta G^{true}_{i,target}$) corrupted by experimental uncertainty, which is assumed to be 0.3 kcal/mol~\citep{BROWN2009420}, with the values reported in the papers ($\Delta G^{obs}_{i,target}$) treated as observations from this distribution (Equation~\ref{eq12}) 
+
+\begin{equation}\label{eq12}
+\Delta G^{exp}_{i,target} = \mathcal{N}(\Delta G^{true}_{i,target}, 0.3 ~\text{kcal/mol},~observed = \Delta G^{obs}_{i,target})
 \end{equation}
 
-From these $\epsilon$ values, we calculated the correlation coeffient, $\rho$ as in Equation~\ref{eq10}. 
+$\Delta G^{true}_{i,target}$ was assigned a weak normal prior, as in equation~\ref{eq13}. 
 
+\begin{equation}\label{eq13}
+\Delta G^{true}_{i,target} = \mathcal{N}(0, ~50~\text{kcal/mol})
+\end{equation}
+
+The error for a given ligand was calculated as in Equation~\ref{eq9}. 
+
+\begin{equation}\label{eq9}
+\epsilon_i = \Delta G^{sch}_i - \Delta G^{true}_i
+\end{equation}
+
+From these $\epsilon$ values, we calculated the correlation coefficient, $\rho$ as in Equation~\ref{eq10}. 
 \begin{equation}\label{eq10}
 \rho = \frac{cov(\epsilon_{target1}, \epsilon_{target2})}{\sigma_{target 1}\sigma_{target 2}}
 \end{equation}
  
- Where $\sigma$ is the standard deviation of $\epsilon$. 
+ Where $\sigma$ is the standard deviation of $\epsilon$. To quantify $\rho$ for the CDK2/ERK2 calculations, the default NUTS sampler with jitter+adapt\_diag initialization, 1000 tuning steps, and a target accept probability of 0.8 was used to draw 10000 samples from the model. The CDK2/CDK9 model was sampled 20000 times using default NUTS sampler with jitter+adapt\_diag initialization and 3000 tuning steps. 
  
 %
 %  Results 
@@ -258,7 +270,8 @@ The congenric ligand series features a single subsituent point, with the R group
 \end{figure}
 
 \paragraph{FEP+ calculations show accurate potency predictions for ERK2/CDK2 and larger errors for CDK2/CDK9}
-
+The FEP+ predictions of single target potencies ($\Delta G$) showed good accuracy for the CDK2 and ERK2 dataset (Figure~\ref{fig:figure-4}, top), with an RMSE of $0.37^{0.57}_{0.16}$ and $0.53^{0.81}_{0.22}$ kcal/mol, respectively. All of the CDK2 and ERK2 potencies were predicted within 1 log unit of the experimental value. Despite the high accuracy for the single target potency predictions, the selectivity ($\Delta \Delta G_{selectivity}$) predictions show an RMSE of $0.81^{1.26}_{0.37}$ kcal/mol, with all of the predictions falling within 1 log unit of the experimental values (Figure~\ref{fig:figure-4}, top right panel).\todo{this will change if we take of the ff uncertainty error bars}. Despite the high accuracy of the predictions, the narrow dynamic range and high uncertainty from experiment and calculation obscures any signal in the data. 
+The CDK2 and CDK9 datasets show higher errors in the potency predictions, with an RMSE of $1.39^{2.05}_{0.58}$ and $1.71^{2.61}_{0.61}$ kcal/mol respectively. There are a number of outliers that fall outside of 1 log unit from the experimental value. While the higher per target errors make predicting potency more difficult, the selectivity predictions show a much lower RMSE of $0.74^{1.25}_{0.31}$ kcal/mol. This suggests that some correlation in the error is leading to fortuitous cancellation of systematic error, leading to more accurate than expected predictions of $\Delta \Delta G_{selectivity}$. 
 
 \begin{figure}
 \begin{fullwidth}
@@ -273,6 +286,17 @@ Single target potencies and selectivities for CDK2/ERK2 from the Blake datasets 
 }
 \end{fullwidth}
 \end{figure}
+
+\paragraph{Free energy calculation errors are correlated, accelerating selectivity optimization}
+To quantify the correlation coefficient ($
+\rho$) of the errors in our calculations, we built a Bayesian graphical model, as described in the methods section. Briefly, we modeled the absolute free energy ($G$) of each ligand in each phase (complex and solvent) as in equation~\ref{eq4}. The model was chained to the FEP+ calculations by providing the $\Delta G^{calc}_{phase,ij,target}$ as observed data, as in equation~\ref{eq6}. As in equation, the experimental data was modeled as a normal distribution centered around the true free energy of binding ($\Delta G^{true}_{i,target}$) corrupted by experimental error, which is assumed to be 0.3 kcal/mol from previous work done to quantify the uncertainty in publicly available data~\citep{BROWN2009420}. The reported IC50 values from each dataset were treated as data observations (Equation~\ref{eq12}) and the $\Delta G^{true}_{i,target}$ was assigned a weak normal prior (Equation~\ref{eq13}). The correlation coefficient was calculated for each sample according to equation~\ref{eq9}. 
+The correlation coefficient $\rho$ for the CDK2/ERK2 calculations was quantified to be $0.5^{0.33}_{-0.23}$, indicating that the errors are largely uncorrelated between ERK2 and CDK2 (Figure~\ref{fig:figure-5}A, right). The joint marginal distribution of the error ($\epsilon$) for each target is symmetric, which is expected for cases in which $\rho$ is 0 (Supp. Figure~\ref{fig:sup-figure-2}). Despite the weak correlation in errors, the high per target accuracy of these calculations should have a 2-3x speed up for 1 log unit selectivity optimization, and a 20-30x speed up for 2 log unit selectivity optimization (Figure~\ref{fig:figure-5}A, right). 
+The CDK2/CDK9 calculations show strong evidence of correlation, with a correlation coefficient of $0.70^{0.82}_{0.57}$ (Figure~\ref{fig:figure-5}B, right). The joint marginal distribution of errors is strongly diagonal, which is expected based on the value for $\rho$ (Figure~\ref{fig:figure-5}B, left). The high correlation in errors leads to a speed up of 4-5 for 1 log unit selectivity optimization and 30-40x for 2 log unit selectivity optimization (Figure~\ref{fig:figure-5}B, right), despite the much higher per target errors.
+\todo[inline]{add sigma selectivity}
+
+
+
+
 
 \begin{figure}
 \begin{fullwidth}
