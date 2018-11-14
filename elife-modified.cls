@@ -3,7 +3,7 @@
 % Created by Overleaf (writeLaTeX).
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{elife}[2017/06/15, v1.3]
+\ProvidesClass{elife-modified}[2017/06/15, v1.3]
 
 \RequirePackage[english]{babel}
 
