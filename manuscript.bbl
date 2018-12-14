@@ -1,4 +1,4 @@
-\begin{thebibliography}{65}
+\begin{thebibliography}{66}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\urlprefix}{}
 \providecommand{\doiprefix}{doi: }
@@ -538,6 +538,17 @@
 \newblock {OPLS3}: A Force Field Providing Broad Coverage of Drug-like Small
   Molecules and Proteins.
 \newblock J Chem Theory Comput.  2016 Jan; 12(1):281--296.
+
+\bibitem[{Abel et~al.(2017{\natexlab{c}})Abel, Robert and Wang, Lingle and
+  Harder, Edward D. and Berne, B. J. and Friesner, Richard
+  A.}]{Abel:Acc.Chem.Res.:2017}
+\textbf{\color{eLifeMediumGrey} Abel R}, Wang L, Harder ED, Berne BJ, Friesner
+  RA.
+\newblock Advancing {{Drug Discovery}} through {{Enhanced Free Energy
+  Calculations}}.
+\newblock Acc Chem Res.  2017 Jul; 50(7):1625--1632.
+\newblock \href{10.1021/acs.accounts.7b00083}{\doiprefix
+  \detokenize{10.1021/acs.accounts.7b00083}}.
 
 \bibitem[{Bochevarov et~al.(2013)Bochevarov, Art D and Harder, Edward and
   Hughes, Thomas F and Greenwood, Jeremy R and Braden, Dale A and Philipp, Dean

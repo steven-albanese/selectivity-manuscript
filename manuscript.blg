@@ -67,6 +67,10 @@ Repeated entry---line 7877 of file albanese.bib
  : @article{Harder:J.Chem.TheoryComput.:2016
  :                                          ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 8164 of file albanese.bib
+ : @article{Abel:Acc.Chem.Res.:2017
+ :                                 ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 8219 of file albanese.bib
  : @article{BROWN2009420
  :                      ,
@@ -90,45 +94,45 @@ presort is already a type "wizard-defined" function name
  :                  }
 `journal' is a missing field, not a string, for entry fda-approved-kinase-inhibitors
 while executing---line 1953 of file vancouver-elife.bst
-You've used 65 entries,
+You've used 66 entries,
             3483 wiz_defined-function locations,
-            1168 strings with 27878 characters,
-and the built_in function-call counts, 259575 in all, are:
-= -- 32709
-> -- 2024
+            1174 strings with 28134 characters,
+and the built_in function-call counts, 262218 in all, are:
+= -- 33046
+> -- 2044
 < -- 10
-+ -- 1119
-- -- 506
-* -- 24086
-:= -- 27364
-add.period$ -- 205
-call.type$ -- 65
-change.case$ -- 196
++ -- 1135
+- -- 511
+* -- 24325
+:= -- 27644
+add.period$ -- 209
+call.type$ -- 66
+change.case$ -- 199
 chr.to.int$ -- 63
-cite$ -- 65
-duplicate$ -- 19988
-empty$ -- 24683
-format.name$ -- 641
-if$ -- 59764
-int.to.chr$ -- 3
-int.to.str$ -- 66
-missing$ -- 1023
-newline$ -- 341
-num.names$ -- 130
-pop$ -- 1735
+cite$ -- 66
+duplicate$ -- 20226
+empty$ -- 24928
+format.name$ -- 648
+if$ -- 60371
+int.to.chr$ -- 4
+int.to.str$ -- 67
+missing$ -- 1036
+newline$ -- 347
+num.names$ -- 132
+pop$ -- 1759
 preamble$ -- 1
-purify$ -- 195
+purify$ -- 198
 quote$ -- 0
-skip$ -- 1376
+skip$ -- 1391
 stack$ -- 0
-substring$ -- 56528
-swap$ -- 2478
+substring$ -- 57036
+swap$ -- 2512
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 390
+type$ -- 396
 warning$ -- 0
-while$ -- 950
+while$ -- 962
 width$ -- 0
-write$ -- 871
-(There were 22 error messages)
+write$ -- 886
+(There were 23 error messages)
