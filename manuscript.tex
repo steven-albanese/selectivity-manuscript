@@ -377,9 +377,6 @@ In order to understand what the current statistical error is for our calculation
 \section{Discussion and Conclusions}
 We have demonstrated, using a simple numerical model, the impact that free energy calculations with even weakly correlated errors can have on speeding up the optimization of selectivity in small molecule kinase inhibitors. While the expected speed up is dependent on the per target error of the method ($\sigma_{target}$), the speedup is also highly dependent on the correlation of errors made for both targets. Unsurprisingly, free energy methods have greater impact as the threshold for selectivity optimization goes from 10x to 100x. While 100x selectivity optimization is difficult to achieve, the expected benefit from free energy calculations is also quite high, with 1 and 2 order of magnitude speedups possible. 
 To quantify the correlation of errors in two example systems, we gathered experimental data for two congeneric ligand series with experimental data for CDK2 and ERK2, as well as CDK2 and CDK9. These datasets, which had crystal structures for both targets with the same ligand co-crystallized, exemplify the difficulty in predicting selectivity. The dynamic range of selectivity for both systems is incredibly narrow, with most of the perturbations not having a major impact on the overall selectivity achieved. Further, the data was reported with unrelaible experimental uncertainties, which makes quantifying the errors made by the free energy calculations difficult. This issue is common when considering selectivity, as many kinase-oriented high throughput screens are carried out at a single concentration and not highly quantitative. 
-\todo[inline]{discuss quantification of rho (is there a way to know a priori what rho might be?)}
-\todo[inline]{discussion of the expected speedup and sigma based on the quantification of rho}
-\todo[inline]{extensions include: separating statistical error (unless this gets added into the results section}
 
 %
 \newpage
@@ -394,6 +391,7 @@ To quantify the correlation of errors in two example systems, we gathered experi
 \section{Acknowledgments}
 JDC and SKA acknowledge support from NIH grant R01GM121505.
 JDC acknowledges partial support from NIH grant P30CA008748.
+Patrick Grinaway for useful discussions about Bayesian statistics 
 
 \textbf{To be filled out soon}
 
