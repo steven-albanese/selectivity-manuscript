@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 DEC 2018 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  19 DEC 2018 12:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2189,7 +2189,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/fos/b/n' tried instead on input line 109.
 
-Overfull \hbox (10.63133pt too wide) in paragraph at lines 125--126
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[3]
+Overfull \hbox (10.63133pt too wide) in paragraph at lines 146--147
 \T1/fos/m/n/9 (-20) Structures from the Shao [[]] and Hole [[]], and Blake [[]]
  pa-pers were down-loaded from the PDB [[]],selecting
  []
@@ -2199,8 +2204,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[3]
-Overfull \hbox (14.36642pt too wide) in paragraph at lines 154--155
+[4]
+Overfull \hbox (14.36642pt too wide) in paragraph at lines 165--166
 \T1/fos/m/n/9 (-20) lig-ands. The code used to boot-strap these val-ues is avai
 l-able on github: https://github.com/choderalab/selectivity 
  []
@@ -2210,70 +2215,66 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[4]
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
 [5]
-<figures/figure1.png, id=234, 1437.37pt x 1046.91125pt>
-File: figures/figure1.png Graphic file (type png)
-<use figures/figure1.png>
-Package pdftex.def Info: figures/figure1.png  used on input line 238.
-(pdftex.def)             Requested size: 443.57848pt x 323.08545pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--247
-
- []
-
-LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <8> not available
-(Font)              Font shape `T1/fos/b/n' tried instead on input line 247.
-
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
 [6]
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
+<figures/figure1.png, id=250, 1437.37pt x 1046.91125pt>
+File: figures/figure1.png Graphic file (type png)
+<use figures/figure1.png>
+Package pdftex.def Info: figures/figure1.png  used on input line 253.
+(pdftex.def)             Requested size: 443.57848pt x 323.08545pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--262
+
  []
 
-[7 <./figures/figure1.png>]
-<figures/figure2.png, id=264, 1927.2pt x 1084.05pt>
+LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <8> not available
+(Font)              Font shape `T1/fos/b/n' tried instead on input line 262.
+<figures/figure2.png, id=260, 1927.2pt x 1084.05pt>
 File: figures/figure2.png Graphic file (type png)
 <use figures/figure2.png>
-Package pdftex.def Info: figures/figure2.png  used on input line 260.
+Package pdftex.def Info: figures/figure2.png  used on input line 275.
 (pdftex.def)             Requested size: 443.57848pt x 249.50821pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--269
+Underfull \hbox (badness 10000) in paragraph at lines 275--284
 
  []
 
 LaTeX Font Info:    Font shape `T1/fos/bx/it' in size <8> not available
-(Font)              Font shape `T1/fos/b/it' tried instead on input line 269.
+(Font)              Font shape `T1/fos/b/it' tried instead on input line 284.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 274.
+ine 289.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[8 <./figures/figure2.png>]
+[7]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
 
-LaTeX Warning: Marginpar on page 9 moved.
+[8 <./figures/figure1.png>]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
 
-<figures/figure3.pdf, id=291, 1882.03125pt x 1052.93375pt>
+[9 <./figures/figure2.png>]
+<figures/figure3.pdf, id=300, 1882.03125pt x 1052.93375pt>
 File: figures/figure3.pdf Graphic file (type pdf)
 <use figures/figure3.pdf>
-Package pdftex.def Info: figures/figure3.pdf  used on input line 281.
+Package pdftex.def Info: figures/figure3.pdf  used on input line 296.
 (pdftex.def)             Requested size: 443.57848pt x 248.16246pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--290
+Underfull \hbox (badness 10000) in paragraph at lines 296--305
 
  []
 
 
-Overfull \hbox (9.75313pt too wide) in paragraph at lines 294--294
+Overfull \hbox (9.75313pt too wide) in paragraph at lines 309--309
 |\T1/fos/m/n/10 (-20) FEP+ cal-cu-la-tions show ac-cu-rate po-tency pre-dic-tio
 ns for ERK2/CDK2 and larger er-rors for CDK2/CDK9| 
  []
@@ -2283,24 +2284,24 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[9 <./figures/figure3.pdf>]
-<figures/figure4.pdf, id=314, 1477.52pt x 1231.60126pt>
+[10 <./figures/figure3.pdf>]
+<figures/figure4.pdf, id=326, 1477.52pt x 1231.60126pt>
 File: figures/figure4.pdf Graphic file (type pdf)
 <use figures/figure4.pdf>
-Package pdftex.def Info: figures/figure4.pdf  used on input line 301.
+Package pdftex.def Info: figures/figure4.pdf  used on input line 316.
 (pdftex.def)             Requested size: 443.57848pt x 369.74632pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--308
+Underfull \hbox (badness 10000) in paragraph at lines 316--323
 
  []
 
-<figures/figure5.pdf, id=332, 1365.1pt x 1148.29pt>
+<figures/figure5.pdf, id=344, 1500.60625pt x 1148.29pt>
 File: figures/figure5.pdf Graphic file (type pdf)
 <use figures/figure5.pdf>
-Package pdftex.def Info: figures/figure5.pdf  used on input line 327.
-(pdftex.def)             Requested size: 443.57848pt x 373.11974pt.
+Package pdftex.def Info: figures/figure5.pdf  used on input line 342.
+(pdftex.def)             Requested size: 443.57848pt x 339.42595pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--334
+Underfull \hbox (badness 10000) in paragraph at lines 342--349
 
  []
 
@@ -2309,22 +2310,17 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[10]
+[11]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[11 <./figures/figure4.pdf>]
+[12 <./figures/figure4.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[12 <./figures/figure5.pdf>]
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
- [][][][][][][]| 
- []
-
-[13] (./manuscript.bbl
+[13 <./figures/figure5.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
@@ -2334,122 +2330,132 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[15]
+[15] (./manuscript.bbl
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[16])
+[16]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
 [17]
-<figures/supp_figure1.png, id=429, 1843.88875pt x 672.5125pt>
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[18])
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][]| 
+ []
+
+[19]
+<figures/supp_figure1.png, id=448, 1843.88875pt x 672.5125pt>
 File: figures/supp_figure1.png Graphic file (type png)
 <use figures/supp_figure1.png>
-Package pdftex.def Info: figures/supp_figure1.png  used on input line 444.
+Package pdftex.def Info: figures/supp_figure1.png  used on input line 459.
 (pdftex.def)             Requested size: 443.57848pt x 161.77571pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 444--452
+Underfull \hbox (badness 10000) in paragraph at lines 459--467
 
  []
 
-<figures/supp_2.png, id=433, 1836.8625pt x 643.40375pt>
+<figures/supp_2.png, id=452, 1836.8625pt x 643.40375pt>
 File: figures/supp_2.png Graphic file (type png)
 <use figures/supp_2.png>
-Package pdftex.def Info: figures/supp_2.png  used on input line 459.
+Package pdftex.def Info: figures/supp_2.png  used on input line 474.
 (pdftex.def)             Requested size: 443.57848pt x 155.37234pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--466
+Underfull \hbox (badness 10000) in paragraph at lines 474--481
 
  []
 
-<figures/supp_figure3.pdf, id=434, 650.43pt x 433.62pt>
+<figures/supp_figure3.pdf, id=453, 650.43pt x 433.62pt>
 File: figures/supp_figure3.pdf Graphic file (type pdf)
 <use figures/supp_figure3.pdf>
-Package pdftex.def Info: figures/supp_figure3.pdf  used on input line 473.
+Package pdftex.def Info: figures/supp_figure3.pdf  used on input line 488.
 (pdftex.def)             Requested size: 443.57848pt x 295.72446pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 473--480
+Underfull \hbox (badness 10000) in paragraph at lines 488--495
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure4.pdf, id=435, 1108.14pt x 1274.7625pt>
+<figures/supp_figure4.pdf, id=454, 1108.14pt x 1274.7625pt>
 File: figures/supp_figure4.pdf Graphic file (type pdf)
 <use figures/supp_figure4.pdf>
-Package pdftex.def Info: figures/supp_figure4.pdf  used on input line 487.
+Package pdftex.def Info: figures/supp_figure4.pdf  used on input line 502.
 (pdftex.def)             Requested size: 443.57848pt x 510.26555pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--493
+Underfull \hbox (badness 10000) in paragraph at lines 502--508
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure5.pdf, id=437, 1092.08pt x 1319.93124pt>
+<figures/supp_figure5.pdf, id=456, 1092.08pt x 1319.93124pt>
 File: figures/supp_figure5.pdf Graphic file (type pdf)
 <use figures/supp_figure5.pdf>
-Package pdftex.def Info: figures/supp_figure5.pdf  used on input line 501.
+Package pdftex.def Info: figures/supp_figure5.pdf  used on input line 516.
 (pdftex.def)             Requested size: 443.57848pt x 536.12006pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--508
+Underfull \hbox (badness 10000) in paragraph at lines 516--523
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure6.pdf, id=438, 1108.14pt x 1274.7625pt>
+<figures/supp_figure6.pdf, id=457, 1108.14pt x 1274.7625pt>
 File: figures/supp_figure6.pdf Graphic file (type pdf)
 <use figures/supp_figure6.pdf>
-Package pdftex.def Info: figures/supp_figure6.pdf  used on input line 516.
+Package pdftex.def Info: figures/supp_figure6.pdf  used on input line 531.
 (pdftex.def)             Requested size: 443.57848pt x 510.26555pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--522
+Underfull \hbox (badness 10000) in paragraph at lines 531--537
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure7.pdf, id=440, 1092.08pt x 1319.93124pt>
+<figures/supp_figure7.pdf, id=459, 1092.08pt x 1319.93124pt>
 File: figures/supp_figure7.pdf Graphic file (type pdf)
 <use figures/supp_figure7.pdf>
-Package pdftex.def Info: figures/supp_figure7.pdf  used on input line 530.
+Package pdftex.def Info: figures/supp_figure7.pdf  used on input line 545.
 (pdftex.def)             Requested size: 443.57848pt x 536.12006pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--537
+Underfull \hbox (badness 10000) in paragraph at lines 545--552
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure8.pdf, id=441, 1264.725pt x 827.09pt>
+<figures/supp_figure8.pdf, id=460, 1264.725pt x 827.09pt>
 File: figures/supp_figure8.pdf Graphic file (type pdf)
 <use figures/supp_figure8.pdf>
-Package pdftex.def Info: figures/supp_figure8.pdf  used on input line 544.
+Package pdftex.def Info: figures/supp_figure8.pdf  used on input line 559.
 (pdftex.def)             Requested size: 443.57848pt x 290.07898pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--551
+Underfull \hbox (badness 10000) in paragraph at lines 559--566
 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/supp_figure9.pdf, id=443, 872.25874pt x 879.285pt>
+<figures/supp_figure9.pdf, id=462, 872.25874pt x 879.285pt>
 File: figures/supp_figure9.pdf Graphic file (type pdf)
 <use figures/supp_figure9.pdf>
-Package pdftex.def Info: figures/supp_figure9.pdf  used on input line 558.
+Package pdftex.def Info: figures/supp_figure9.pdf  used on input line 573.
 (pdftex.def)             Requested size: 443.57848pt x 447.15483pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 558--565
+Underfull \hbox (badness 10000) in paragraph at lines 573--580
 
  []
 
@@ -2463,56 +2469,56 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[18 <./figures/supp_figure1.png> <./figures/supp_2.png>]
+[20 <./figures/supp_figure1.png> <./figures/supp_2.png>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[19 <./figures/supp_figure3.pdf>]
+[21 <./figures/supp_figure3.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[20 <./figures/supp_figure4.pdf>]
+[22 <./figures/supp_figure4.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[21 <./figures/supp_figure5.pdf>]
+[23 <./figures/supp_figure5.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[22 <./figures/supp_figure6.pdf>]
+[24 <./figures/supp_figure6.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[23 <./figures/supp_figure7.pdf>]
+[25 <./figures/supp_figure7.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[24 <./figures/supp_figure8.pdf>]
+[26 <./figures/supp_figure8.pdf>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][]| 
  []
 
-[25 <./figures/supp_figure9.pdf>] (./manuscript.suppinfo)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 577.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 577.
+[27 <./figures/supp_figure9.pdf>] (./manuscript.suppinfo)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 592.
  (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 577.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 577.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 592.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 592.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: D0A8EE4ACA8789021544DD51D229F6CA;368.
+(rerunfilecheck)             Checksum: 92A334B5FD12601BD7BB6B6D0480144F;368.
  ) 
 Here is how much of TeX's memory you used:
- 38341 strings out of 492649
- 739392 string characters out of 6129622
- 961034 words of memory out of 5000000
- 40790 multiletter control sequences out of 15000+600000
- 703932 words of font info for 666 fonts, out of 8000000 for 9000
+ 38354 strings out of 492649
+ 739596 string characters out of 6129622
+ 967521 words of memory out of 5000000
+ 40792 multiletter control sequences out of 15000+600000
+ 704447 words of font info for 671 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,15n,80p,10425b,1028s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/opensans/opensans-03.enc}
@@ -2528,10 +2534,10 @@ ix-mathcal.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/stix
 -mathex.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/stix-ma
 thit.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stix/stix-mathr
 m.pfb>
-Output written on manuscript.pdf (25 pages, 4713247 bytes).
+Output written on manuscript.pdf (27 pages, 4745915 bytes).
 PDF statistics:
- 683 PDF objects out of 1000 (max. 8388607)
- 552 compressed objects within 6 object streams
- 150 named destinations out of 1000 (max. 500000)
+ 692 PDF objects out of 1000 (max. 8388607)
+ 565 compressed objects within 6 object streams
+ 155 named destinations out of 1000 (max. 500000)
  57483 words of extra memory for PDF output out of 61914 (max. 10000000)
 
