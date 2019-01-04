@@ -159,8 +159,7 @@ To quantify the expected speedup in selectivity optimization, we modeled the cha
 \label{fig:figure-1}
 {\bf Free energy calculations can accelerate selectivity optimization.}
 ({\bf A})  The effect of correlation on expected errors for predicting selectivity ($\sigma_\text{selectivity}$) in kcal/mol. Each curve represents a different combination of per target forcefield errors ($\sigma_\text{ff,1}$ and $\sigma_\text{ff,2}$). 
-({\bf B}) The change in selectivity for molecules proposed by medicinal chemists optimizing a lead candidate can be modeled by a normal distribution centered on zero with a standard deviation of 1~kcal/mol (black curve). 
-\todo[inline]{JDC: You'll have to justify this choice of standard deviation.}
+({\bf B}) The change in selectivity for molecules proposed by medicinal chemists optimizing a lead candidate can be modeled by a normal distribution centered on zero with a standard deviation of 1~kcal/mol (black curve), which is consistent with the standard deviation of selectivities observed in the experimental data presented later in this work. 
 Each green curve corresponds to the distribution of compounds made after screening for a 1 log$_{10}$ unit (1.4~kcal/mol) improvement in selectivity with a free energy methodology with a 1~kcal/mol per target forcefield error and a particular correlation, in the regime of infinite error where statistical error is zero. 
 The shaded region of each curve corresponds to the compounds with a real 1~log$_{10}$ unit improvement in selectivity. 
 The speedup is calculated as the ratio of the percentage of compounds made with a real 1~log$_{10}$ unit improvement to the percentage of compounds that would be expected in the original distribution.  
@@ -182,8 +181,8 @@ On the other hand, CDK2 forms interactions between the sulfonamide of ligand 12c
 The congeneric series of ligands contains a number of challenging perturbations, particularly at substituent point R3 (Figure~\ref{fig:figure-2}C, left). Ligand 12i also presented a challenging perturbation, moving the 1-(piperazine-1-yl)ethanone from the \emph{meta} to \emph{para} location. 
 
 This congeneric series of ligands also highlights two of the challenges of working from publicly available data. 
-First, the dynamic range of selectivity is incredibly narrow, with a mean $\Delta \Delta G_{selectivity}$ (CDK9 - CDK2) of only -0.65~kcal/mol, and a standard deviation of 0.88~kcal/mol. 
-\todo[inline]{JDC: List total dynamic range too (max - min)?}
+First, the dynamic range of selectivity is incredibly narrow, with a mean $\Delta \Delta G_{selectivity}$ (CDK9 - CDK2) of only -0.65~kcal/mol, and a standard deviation of 0.88~kcal/mol. The total dynamic range of this dataset is 2.8 kcal/mol. 
+
 Additionally, experimental uncertainties are not reported for the experimental measurements. 
 Thus, for this and subsequent sets of ligands, the experimental uncertainty is assumed to be 0.3~kcal/mol based on previous work done to summarize uncertainty in experimental data~\citep{BROWN2009420,Hauser:2018vz}. 
 
@@ -216,15 +215,14 @@ Crystal structures for both CDK2 (Figure~\ref{fig:figure-3}A, top) and ERK2 (Fig
 Of note, CDK2 was not crystallized with cyclin~A, despite cyclin~A being included in the affinity assay reported in the paper~\citep{Blake2016-su}. 
 CDK2 adopts a DFG-in conformation with the $\alpha$C helix rotated out, away from the ATP binding site and breaking the conserved salt bridge between K33 and E51 (Supplementary Figure~\ref{fig:sup-figure-1}A), indicative of an inactive kinase~\citep{Huse2002-ml,Hari:2013dp}. 
 By comparison, the CDK2 structure from the CDK2/CDK9 dataset adopts a DFG-in conformation with the $\alpha$C~helix rotated in, forming the ionic bond between K33 and E51 indicative of an active kinase, due to allosteric activation by cyclin~A. 
-While missing cyclins have caused problems for free energy calculations in prior work~\todo{SKA:is there a good citation for this?}, it is possible that the fully active conformation contributes equally to binding affinity for all of the ligands in the series, and the high accuracy of the potency predictions (Figure~\ref{fig:figure-4}, top left) is the result of fortutious cancellation of errors. 
+While missing cyclins have caused problems for free energy calculations in prior work~\todo[inline]{SKA:is there a good citation for this?}, it is possible that the fully active conformation contributes equally to binding affinity for all of the ligands in the series, and the high accuracy of the potency predictions (Figure~\ref{fig:figure-4}, top left) is the result of fortutious cancellation of errors. 
 
 The binding mode for this series is similar between both kinases. 
 There is a set of conserved hydrogens bonds between the scaffold of the ligand and the backbone of one of the hinge residues (L83 for CDK2 and M108 for ERK2). 
 The conserved lysine (K33 for CDK2 and K54 for ERK2), normally involved in the formation of a ionic bond with the $\alpha$C helix, forms a hydrogen bond with the scaffold (Figure~\ref{fig:figure-4}A and~\ref{fig:figure-4}B, bottom) in both CDK2 and ERK2. 
 However, in the ERK2 structure, the hydroxyl engages a crystallographic water as well as N154 in a hydrogen bond network that is not present in the CDK2 structure. 
 The congeneric ligand series features a single solvent-exposed substituent. 
-This helps explain the extremely narrow distribution of selectivities, with a mean selectivity of -1.74~kcal/mol (ERK2 - CDK2) and standard deviation of 0.56~kcal/mol. 
-\todo[inline]{JDC: Also list dynamic range (max - min)?}
+This helps explain the extremely narrow distribution of selectivities, with a mean selectivity of -1.74~kcal/mol (ERK2 - CDK2) and standard deviation of 0.56~kcal/mol. The total dynamic range of this dataset is 2.2 kcal/mol. 
 This suggests that the selectivity is largely driven by the scaffold and unaffected by the R-group substitutions.
 
 \begin{figure}
@@ -285,7 +283,6 @@ Quantifying $\rho$ for these calculations enables estimation of the forcefield e
 {\bf Correlation in force field errors between targets can significantly accelerate selectivity optimization.} 
 ({\bf A}, \emph{left}) The joint posterior distribution of the prediction errors for the more distantly related CDK2 (x-axis) and ERK2 (y-axis) from the Bayesian graphical model. 
 ({\bf A}, \emph{right}) Speedup in selectivity optimization (x-axis) as a function of correlation coefficient (x-axis). 
-\todo[inline]{JDC: bottom of figure panel is cut off. Did you use the tightlayout function?}
 The posterior marginal distribution of the correlation coefficient ($\rho$) is shown in gray, while the expected speed up is shown for 100$\times$ (green curve) and 10$\times$ (yellow curve) selectivity optimization. 
 The inserted box shows the mean and 95\% confidence interval for the correlation coefficient. The marginal distribution of speedup is shown on the right side of the plot for both 100$\times$ (green) and 10$\times$ (yellow) selectivity optimization speedups. 
 ({\bf B}) As above, but for the more closely related CDK2/CDK9 selectivity dataset.
@@ -425,9 +422,9 @@ To model the way an offset is calculated for the $\Delta~G$ reported by the FEP+
 \end{equation}
 The offset was added to each $\Delta G^\text{BAR}_{i}$ to calculate $\Delta G^\text{sch}_{i}$. 
 
-The experimental binding affinity was treated as a true value ($\Delta G^\text{true}_{i,\text{target}}$) corrupted by experimental uncertainty, which is assumed to be 0.3~kcal/mol~\citep{BROWN2009420}, 
-\todo[inline]{JDC: You \emph{must} provide a detailed justification for this assumption here.}
-with the values reported in the papers ($\Delta G^\text{obs}_{i,\text{target}}$) treated as observations from this distribution (Equation~\ref{eq12}),
+The experimental binding affinity was treated as a true value ($\Delta G^\text{true}_{i,\text{target}}$) corrupted by experimental uncertainty, which is assumed to be 0.3~kcal/mol~\citep{BROWN2009420}. There are a number of studies that report on the reproducibility and uncertainty of intralab IC50 measurements, ranging from as small as 0.22~kcal/mol~\citep{Hauser:2018vz} to as high as 0.4 kcal/mol~\citep{BROWN2009420}. The assumed value falls within this range and is in good agreement with the uncertainty reported from multiple replicate measurements in internal datasets at Novartis~\citep{Kalliokoski:PloSOne:2013}. 
+
+The values reported in the papers ($\Delta G^\text{obs}_{i,\text{target}}$) were treated as observations from this distribution (Equation~\ref{eq12}),
 \begin{equation}
 \Delta G^\text{exp}_{i,\text{target}} = \mathcal{N}(\text{mean}=\Delta G^{true}_{i,\text{target}}, ~\text{sd}=0.3~\text{kcal/mol},~\text{observed} = \Delta G^\text{obs}_{i,\text{target}}) \label{eq12}
 \end{equation}
@@ -447,8 +444,6 @@ From these $\epsilon$ values, we calculated the correlation coefficient, $\rho$ 
 where $\sigma$ is the standard deviation of $\epsilon$. 
 
 To quantify $\rho$ from these calculations, the default NUTS sampler with {\tt jitter+adapt\_diag} initialization, 3 000 tuning steps, and the default target accept probability was used to draw 20 000 samples from the model. 
-\todo[inline]{JDC: I'd just rerun these both with the larger number of sampling and tuning steps. We don't want people thinking we were gaming these parameters, and we can't provide two arbitrary parameter choices without providing justification as to why.}
-\todo[inline]{SKA: done! The results are basically the same. I will update the figures shortly. The text above has been modified to reflect what was done.}
 
  \paragraph{Calculating the marginal distribution of speedup}
  

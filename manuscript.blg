@@ -51,6 +51,10 @@ Repeated entry---line 7307 of file albanese.bib
  : @article{fda-approved-kinase-inhibitors
  :                                        ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 7315 of file albanese.bib
+ : @article{Kalliokoski:PloSOne:2013
+ :                                  ,
+I'm skipping whatever remains of this entry
 Repeated entry---line 7727 of file albanese.bib
  : @article{Wang:J.Am.Chem.Soc.:2015
  :                                  ,
@@ -94,45 +98,45 @@ presort is already a type "wizard-defined" function name
  :                  }
 `journal' is a missing field, not a string, for entry fda-approved-kinase-inhibitors
 while executing---line 1953 of file vancouver-elife.bst
-You've used 69 entries,
+You've used 70 entries,
             3483 wiz_defined-function locations,
-            1187 strings with 28462 characters,
-and the built_in function-call counts, 268583 in all, are:
-= -- 33874
-> -- 2080
+            1193 strings with 28672 characters,
+and the built_in function-call counts, 270829 in all, are:
+= -- 34158
+> -- 2096
 < -- 12
-+ -- 1157
-- -- 520
-* -- 24888
-:= -- 28322
-add.period$ -- 218
-call.type$ -- 69
-change.case$ -- 208
-chr.to.int$ -- 65
-cite$ -- 69
-duplicate$ -- 20871
-empty$ -- 25513
-format.name$ -- 664
-if$ -- 61839
++ -- 1166
+- -- 524
+* -- 25089
+:= -- 28564
+add.period$ -- 221
+call.type$ -- 70
+change.case$ -- 211
+chr.to.int$ -- 66
+cite$ -- 70
+duplicate$ -- 21079
+empty$ -- 25722
+format.name$ -- 670
+if$ -- 62355
 int.to.chr$ -- 5
-int.to.str$ -- 70
-missing$ -- 1069
-newline$ -- 362
-num.names$ -- 138
-pop$ -- 1807
+int.to.str$ -- 71
+missing$ -- 1081
+newline$ -- 367
+num.names$ -- 140
+pop$ -- 1826
 preamble$ -- 1
-purify$ -- 207
+purify$ -- 210
 quote$ -- 0
-skip$ -- 1433
+skip$ -- 1450
 stack$ -- 0
-substring$ -- 58192
-swap$ -- 2600
+substring$ -- 58617
+swap$ -- 2629
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 414
+type$ -- 420
 warning$ -- 0
-while$ -- 991
+while$ -- 1001
 width$ -- 0
-write$ -- 925
-(There were 23 error messages)
+write$ -- 938
+(There were 24 error messages)
